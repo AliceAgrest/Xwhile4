@@ -6,6 +6,94 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
+        //q1
+        //הפעולה מחזירה את מספר הפעמים שהספרה מופיעה במספר
+        public static int NumberInNumber(int num, int inNum)
+        {
+            int count = 0;
+            int oneNum = 0;
+
+            while (num > 0)
+            {
+                oneNum = num % 10;
+                if (oneNum == inNum)
+                    count++;
+                num /= 10;
+            }
+
+            return count;
+        }
+
+        //q2
+        //הפעולה תחזיר מספר אקראי בתחום הערכים אותם קיבלה
+        public static int RndNum(int num1, int num2)
+        {
+            int rnd1;
+            Random rnd = new Random();
+            rnd1 = rnd.Next(num1, num2);
+
+            return rnd1;
+        }
+
+        //q3
+        //פעולה מקבלת מספר שלם ומחזירה את מספר ספרותיו הזוגיות
+        public static int EvenNumbers(int num)
+        {
+            int evenCount = 0;
+            int digitNumber;
+
+            for (int i = 0; i < num; i++)
+            {
+                digitNumber = num % 10;
+
+                if (digitNumber % 2 == 0)
+                    evenCount++;
+
+                num /= 10;
+            }
+            return evenCount;
+        }
+
+        // q4
+        //הפעולה תחזיר מספר המחלק המשותף הקטן ביותר שלהם
+        //אם אין הפעולה תחזיר -1
+        public static int DividesNum(int num1, int num2)
+        {
+            int i = 2;
+            int min = Math.Min(num1, num2);
+
+            while (((num1 % i > 0) || (num2 % i > 0)) && (i <= min))
+            {
+                i++;
+            }
+            if ((num1 % i != 0) && (num2 % i != 0))
+                i = -1;
+
+            return i;
+        }
+
+        //q5
+        //הפעולה מחזירה נכון אם זה אות 
+        //ואם זה תו מחזירה לא נכון
+        public static string AbcChecker(char a)
+        {
+            string v = "True";
+            string v1 = "False";
+            if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+                return v;
+            else
+                return v1;
+        }
+
+        //q6
+        //חישוב של נוסחה הדומה לנוסחת פיבונאצ'י
+        public static int StoppedCal(int x, int i)
+        {
+            int count;
+            count = i * x;
+            return count;
+        }
+    
     class Program
     {
         //q1
