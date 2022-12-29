@@ -256,6 +256,51 @@ namespace ConsoleApp7
                 Console.WriteLine($"{i}! is {count}");
                 x = count;
             }
+                
+                
+                
+            //הפעולה מקבלת מספר ציונים
+        //פולטת את הממוצע של הציונים
+        public static double avgGrade(int num) {
+            double avg = 0;
+            for (int i = 1; i <= num; i++) {
+                Console.WriteLine("Enter a grade: ");
+                int grade = int.Parse(Console.ReadLine());
+                avg += grade;
+            }
+            avg /= num;
+            return avg;
+        }
+        static void Main(string[] args)
+        {
+            double maxAvgGrade = 0, avg , minAvgGrade = 100;
+            int num, studentCount = 0;
+            char y_n;
+            bool continue1 = true;
+
+            while (continue1 != false) {
+                Console.WriteLine("Enter a number of grades: ");
+                num = int.Parse(Console.ReadLine());
+                avg = avgGrade(num);
+
+                studentCount++;
+
+                if (avg > maxAvgGrade)
+                    maxAvgGrade = avg;
+
+                if (avg < minAvgGrade)
+                    minAvgGrade = avg;
+
+                Console.WriteLine("Do you want to continue?");
+                y_n = char.Parse(Console.ReadLine());
+
+                if (y_n == 'n')
+                    continue1 = false;
+            }
+            Console.WriteLine($"The max average is:{Math.Round(maxAvgGrade, 2)}\n" +
+                $"The min average is:{Math.Round(minAvgGrade, 2)}\n" +
+                $"The count of students is:{studentCount}");
+
 
             Console.ReadLine();
         }
