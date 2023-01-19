@@ -258,7 +258,7 @@ namespace ConsoleApp7
             }
                 
                 
-                
+           //////////////////////////////////////////////////////////////////////     
             //הפעולה מקבלת מספר ציונים
         //פולטת את הממוצע של הציונים
         public static double avgGrade(int num) {
@@ -301,6 +301,31 @@ namespace ConsoleApp7
                 $"The min average is:{Math.Round(minAvgGrade, 2)}\n" +
                 $"The count of students is:{studentCount}");
 
+///////////////////////////////////////////////////////////////////////////////////
+            int[] numbers = new int[6];
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = 0;
+                Console.WriteLine("Enter a number: ");
+                numbers[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < numbers.Length; i++)
+                Console.Write(numbers[i]);
+            Console.WriteLine(" ");
+            for (int i = 5;i >= 0; i--)
+                Console.Write(numbers[i]);
+            Console.WriteLine(" ");
+
+            for (int i = 0; i < numbers.Length; i++) {
+                if (numbers[i] % 2 == 0)
+                    Console.Write(numbers[i]);
+            }
+            Console.WriteLine(" ");
+            for (int i = 0; i < numbers.Length; i++) {
+                if (numbers[i] % 2 != 0)
+                    Console.Write(i); 
+            }
 
             Console.ReadLine();
         }
